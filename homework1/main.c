@@ -82,7 +82,7 @@ void FillMatrixSpiral(int* arr, unsigned int n) {
 }
 
 int main() {
-    const unsigned int n = 5;
+    const unsigned int n = 10;
 
     int arr[n][n];
 
