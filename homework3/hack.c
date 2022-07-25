@@ -1,3 +1,7 @@
+/*
+    Redirect the input stream to main when running "./main < hack"
+*/
+
 #include <stdio.h>
 
 int main() {
