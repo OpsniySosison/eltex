@@ -15,39 +15,65 @@ void Menu(void) {
 int main(void) {
     int a;
     int b;
+    int error;
 
     while(1) {
         a = 0;
         b = 0;
-        system("clear");
+        error = 0;
+        error = system("clear");
+        if (error) {
+            perror("System error");
+            exit(1);
+        }
         Menu();
         unsigned char key = getc(stdin);
-        system("clear");
+        error = system("clear");
+        if (error) {
+            perror("System error");
+            exit(1);
+        }
         switch (key) {
         case '1':   
             puts("Addition\nEnter a and b (a + b)");
-            scanf("%d%d", &a, &b);
+            error = scanf("%d%d", &a, &b);
+            if (error == EOF) {
+                perror("Error!");
+                continue;
+            }
             fprintf(stdout, "Result %d\n", Addition(a, b));
             getchar();
             getchar();
             break;
         case '2':
             puts("Substraction\nEnter a and b (a - b)");
-            scanf("%d%d", &a, &b);
+            error = scanf("%d%d", &a, &b);
+            if (error == EOF) {
+                perror("Error!");
+                continue;
+            }
             fprintf(stdout, "Result %d\n", Substraction(a, b));
             getchar();
             getchar();
             break;
         case '3':
             puts("Multiplication\nEnter a and b (a * b)");
-            scanf("%d%d", &a, &b);
+            error = scanf("%d%d", &a, &b);
+            if (error == EOF) {
+                perror("Error!");
+                continue;
+            }
             fprintf(stdout, "Result %d\n", Multiplication(a, b));
             getchar();
             getchar();
             break;
         case '4':
-            puts("Division\nEnter a and b (a + b)");
-            scanf("%d%d", &a, &b);
+            puts("Division\nEnter a and b (a - b)");
+            error = scanf("%d%d", &a, &b);
+            if (error == EOF) {
+                perror("Error!");
+                continue;
+            }
             fprintf(stdout, "Result %d\n", Division(a, b));
             getchar();
             getchar();
