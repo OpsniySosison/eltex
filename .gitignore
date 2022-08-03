@@ -2,3 +2,6 @@
 main
 program
 test
+
+*.o
+*.a
