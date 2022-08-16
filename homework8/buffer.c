@@ -162,6 +162,7 @@ int UploadToFile(BUFF* buff, FILE* file) {
 
 int BufferDestructor(BUFF* buff) {
     free(buff->str);
+    free(buff->sizes_of_prev_strs);
     free(buff);
     return NORMAL;
 }
