@@ -49,10 +49,13 @@ int main(void) {
         pid_t pid = fork();
         if (pid) {
             wait();
+            for (unsigned int i = 0; i < 32; i++) {
+                args[i] = NULL;
+            }
         }
         else {
             if (execvp(strcat(dir, args[0]), args) == -1) {
-                printf("File not found\n");
+                printf("Command not found\n");
                 exit(EXIT_FAILURE);
             }
         }
