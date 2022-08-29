@@ -44,7 +44,6 @@ void Loader() {
 
 void Clients(unsigned int* ptr_id) {
     unsigned int id = *(ptr_id);
-    struct timespec t1;
     printf("%sthread %d start!%s\n", GREEN, id, RESET);
     while (clients[id] > 0) {
         for (unsigned int i = 0; i < 5; i++) {
