@@ -1,7 +1,11 @@
 
+.vscode
+
 main
 program
 test
+server
+client
 
 *.o
 *.a

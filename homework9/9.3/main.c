@@ -11,22 +11,16 @@
 #define GREEN   "\033[1;32;40m"
 
 char* sgets(char* buff, unsigned int size) {
-
     int i, k = getchar();
-
     if (k == EOF)
         return NULL;
-
     for (i = 0; k != EOF && k != '\n' && i < size; i++) {
         buff[i] = k;
         k = getchar();
-
         if (k == EOF && !feof(stdin))
             return NULL;
     }
-
     buff[i] = '\0';
-
     return buff;
 }
 
