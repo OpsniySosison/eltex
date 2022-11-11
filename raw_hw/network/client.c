@@ -62,7 +62,6 @@ int main(void) {
     ((struct udphdr*)packed)->dest = htons(SERV_PORT);
     ((struct udphdr*)packed)->len = htons(sizeof(struct udphdr) + sizeof(msg_buff));
     ((struct udphdr*)packed)->check = htons(0);
-    
 
     if (!strncpy(packed + sizeof(struct udphdr), msg_buff, 20)) {
         fprintf(stderr, "buffer full error\n");
